@@ -142,8 +142,7 @@ public class PlayerController : MonoBehaviour
         if (hit)
         {
 
-            slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;            
-
+            slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;
             slopeDownAngle = Vector2.Angle(hit.normal, Vector2.up);
 
             if(slopeDownAngle != lastSlopeAngle)
@@ -158,11 +157,18 @@ public class PlayerController : MonoBehaviour
 
         }
 
+
         if (slopeDownAngle > maxSlopeAngle || slopeSideAngle > maxSlopeAngle)
         {
             canWalkOnSlope = false;
         }
         else
+        {
+            canWalkOnSlope = true;
+        }
+
+        bool verticalWallNextTo = (Mathf.RoundToInt(slopeSideAngle) == 90);
+        if (verticalWallNextTo == true)
         {
             canWalkOnSlope = true;
         }
@@ -194,7 +200,6 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded && !isOnSlope && !isJumping) //if not on slope
         {
-            Debug.Log("This one");
             newVelocity.Set(movementSpeed * xInput, 0.0f);
             rb.velocity = newVelocity;
         }
