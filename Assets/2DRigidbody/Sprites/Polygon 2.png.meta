@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: d28227fb5ca8f6f4a93f91b8a2a96c5f
+guid: da0b401e1d9612d44968f8d35b2b35bd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
@@ -57,6 +57,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -75,10 +76,12 @@ TextureImporter:
     sprites: []
     outline:
     - - {x: 2, y: 2}
+      - {x: -2, y: 0}
       - {x: -2, y: -2}
       - {x: 2, y: -2}
     physicsShape:
-    - - {x: -2, y: -2}
+    - - {x: -2, y: 0}
+      - {x: -2, y: -2}
       - {x: 2, y: -2}
       - {x: 2, y: 2}
     bones: []
